@@ -15,10 +15,10 @@ const server = http.createServer((request, response) => {
     response.end(fs.readFileSync('./index.html', 'utf8'));
   } else if (request.method === 'GET' && request.url === '/static/css/style.css') {
     response.writeHead(200, ContentType.css);
-    response.end(fs.readFileSync('./static/css/style.css' , 'utf8'));
+    response.end(fs.readFileSync('./css/style.css' , 'utf8'));
   } else if (request.method === 'GET' && request.url === '/static/scripts/script.js') {
     response.writeHead(200, ContentType.js);
-    response.end(fs.readFileSync('./static/scripts/script.js', 'utf8'));
+    response.end(fs.readFileSync('./scripts/script.js', 'utf8'));
   } else {
     response.writeHead(404, ContentType.html);
     response.end('404 ERROR');
