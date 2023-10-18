@@ -11,15 +11,24 @@
 
 <body>
   <div id="root">
-    <div id="frm-login">
+    <div class="box-Main">
       <form method="post" action="/">
-        <label for="txt-ID">ID</label>
-        <input type="text" name="id" id="txt-ID">
-        <label for="txt-PW">PW</label>
-        <input type="text" name="id" id="txt-PW">
-        <input type="submit" value="로그인"></input>
+        <div class="box-ID">
+          <label for="txt-ID">ID</label>
+          <input type="text" name="id" id="txt-ID">
+        </div>
+        <div class="box-PW">
+          <label for="txt-PW">PW</label>
+          <input type="text" name="id" id="txt-PW">
+        </div>
+        <div>
+        <div class="box-Join">
+          <label id="lbl-Join">계정이 없으십니까?</label>
+        </div>
+        <div class="box-Login">
+          <input type="submit" value="로그인"></input>
+        </div>
       </form>
-      <button id="btn-Join">회원가입</button>
     </div>
   </div>
 </body>
