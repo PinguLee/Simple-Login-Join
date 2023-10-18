@@ -25,7 +25,7 @@ const server = http.createServer((request, response) => {
       const { id, pw } = parseTemp;
       console.log(id);
       console.log(pw);
-      location.href="/success.html";
+      location.href="./success.html";
     });
     response.writeHead(200, ContentType.plain);
     response.end('로그인 성공');
