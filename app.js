@@ -3,6 +3,7 @@ const fs = require('fs');
 const querystring = require('querystring');
 
 const port = 8080;
+let a = "";
 
 const ContentType = {
   'plain': { 'Content-Type': 'text/plain; charset=utf8' },
@@ -33,11 +34,13 @@ const server = http.createServer((request, response) => {
       const parseTemp = querystring.parse(temp);
       const { id, pw } = parseTemp;
       if (id === "asd" && pw === "dsa") {
-        console.log("로그인 성공");
+        console.log("1");
       }
     });
     response.writeHead(200, ContentType.plain);
-    response.end('로그인 성공');
+    response.end(
+      console.log("2")
+    );
   } else {
     response.writeHead(404, ContentType.html);
     response.end('404 ERROR');
