@@ -32,8 +32,9 @@ const server = http.createServer((request, response) => {
     request.on('end', () => {
       const parseTemp = querystring.parse(temp);
       const { id, pw } = parseTemp;
-      console.log(id);
-      console.log(pw);
+      if (id === "asd" && pw === "dsa") {
+        console.log("로그인 성공");
+      }
     });
     response.writeHead(200, ContentType.plain);
     response.end('로그인 성공');
