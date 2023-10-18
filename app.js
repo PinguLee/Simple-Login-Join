@@ -15,6 +15,15 @@ const server = http.createServer((request, response) => {
   if (request.method === 'GET' && request.url === '/') {
     response.writeHead(200, ContentType.html);
     response.end(fs.readFileSync('./index.html', 'utf8'));
+  } else if (request.method === 'GET' && request.url === '/success') {
+    response.writeHead(200, ContentType.html);
+    response.end(fs.readFileSync('./success.html', 'utf8'));
+  } else if (request.method === 'GET' && request.url === '/css/style.css') {
+    response.writeHead(200, ContentType.css);
+    response.end(fs.readFileSync('./css/style.css', 'utf8'));
+  } else if (request.method === 'GET' && request.url === '/scripts/script.js') {
+    response.writeHead(200, ContentType.js);
+    response.end(fs.readFileSync('./scripts/script.js', 'utf8'));
   } else if (request.method === 'POST' && request.url === '/login') {
     let temp = "";
     request.on('data', (chunk) => {
@@ -25,16 +34,9 @@ const server = http.createServer((request, response) => {
       const { id, pw } = parseTemp;
       console.log(id);
       console.log(pw);
-      location.href="./success.html";
     });
     response.writeHead(200, ContentType.plain);
     response.end('로그인 성공');
-  } else if (request.method === 'GET' && request.url === '/css/style.css') {
-    response.writeHead(200, ContentType.css);
-    response.end(fs.readFileSync('./css/style.css', 'utf8'));
-  } else if (request.method === 'GET' && request.url === '/scripts/script.js') {
-    response.writeHead(200, ContentType.js);
-    response.end(fs.readFileSync('./scripts/script.js', 'utf8'));
   } else {
     response.writeHead(404, ContentType.html);
     response.end('404 ERROR');
