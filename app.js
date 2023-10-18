@@ -5,10 +5,10 @@ const querystring = require('querystring');
 const port = 8080;
 
 const ContentType = {
-  'plain': { 'Content-Type': 'text/plain' },
-  'html': { 'Content-Type': 'text/html' },
-  'css': { 'Content-Type': 'text/css' },
-  'js': { 'Content-Type': 'application/javascript' }
+  'plain': { 'Content-Type': 'text/plain; charset=utf8' },
+  'html': { 'Content-Type': 'text/html; charset=utf8' },
+  'css': { 'Content-Type': 'text/css; charset=utf8' },
+  'js': { 'Content-Type': 'application/javascript; charset=utf8' }
 };
 
 const server = http.createServer((request, response) => {
