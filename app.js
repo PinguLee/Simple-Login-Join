@@ -12,18 +12,20 @@ const ContentType = {
 };
 
 const server = http.createServer((request, response) => {
-  if (request.method === 'POST' && request.url === '/') {
+  if (request.method === 'GET' && request.url === '/') {
+    response.writeHead(200, ContentType.html);
+    response.end(fs.readFileSync('./index.html', 'utf8'));
+  } else if (request.method === 'POST' && request.url === '/login') {
     let temp = "";
     request.on('data', (chunk) => {
-      body += chunk.toString();
+      temp += chunk.toString();
     });
     request.on('end', () => {
       const parseTemp = querystring.parse(temp);
       const { id, pw } = parseTemp;
-
-      console.log(parseTemp);
       console.log(id);
       console.log(pw);
+      location.href="/success.html";
     });
     response.writeHead(200, ContentType.plain);
     response.end('로그인 성공');
