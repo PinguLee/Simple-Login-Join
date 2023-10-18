@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,14 +8,20 @@
   <link rel="stylesheet" href="./css/style.css">
   <script src="./scripts/script.js" defer></script>
 </head>
+
 <body>
   <div id="root">
-    <form method="post" action="">
-      <label for="text-ID"></label>
-      <input type="text" name="id" id="text-ID">
-      <label for="text-PW"></label>
-      <input type="text" name="id" id="text-PW">
-    </form>
+    <div id="frm-login">
+      <form method="post" action="/">
+        <label for="txt-ID">ID</label>
+        <input type="text" name="id" id="txt-ID">
+        <label for="txt-PW">PW</label>
+        <input type="text" name="id" id="txt-PW">
+        <input type="submit" value="로그인"></input>
+      </form>
+      <button id="btn-Join">회원가입</button>
+    </div>
   </div>
 </body>
+
 </html>
