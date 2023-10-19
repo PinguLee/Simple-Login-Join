@@ -2,15 +2,6 @@ const http = require('http');
 const fs = require('fs');
 const querystring = require('querystring');
 
-const signUpAsset = {
-  id: "",
-  pw: "",
-  email: "",
-  inputBoxColor: "#D9D9D9",
-  textColor: "#B6B6B6",
-  pointColor: "#FF6666"
-};
-
 const port = 8080;
 let a = "";
 
@@ -73,6 +64,6 @@ const server = http.createServer((request, response) => {
   }
 });
 
-server.listen(8080, () => {
+server.listen(port, () => {
   console.log('서버 가동 중 : http://localhost:8080/');
 });
