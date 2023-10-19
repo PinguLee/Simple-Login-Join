@@ -14,15 +14,10 @@ a {
   align-items: center;
   width: 100vw;
   height: 100vh;
-  flex-direction: column;
 }
 
 #lbl-Join {
   color: blue;
-}
-
-#txt-Text {
-  
 }
 
 .box {
@@ -45,4 +40,13 @@ a {
   height: 35px;
   padding: 10px;
   font-weight: bold;
+}
+
+#txt-Text {
+  height: 300px;
+}
+
+.hotpink {
+  background-color: rgba(255, 102, 102, 1);
+  color: white;
 }
