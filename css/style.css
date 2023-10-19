@@ -16,6 +16,10 @@ a {
   height: 100vh;
 }
 
+.box .box-Login > :nth-child(2){
+  width: 300px;
+}
+
 #lbl-Join {
   color: blue;
 }
