@@ -36,6 +36,7 @@ const server = http.createServer((request, response) => {
     });
     request.on('end', () => {
       const { id, pw1, pw2, email } = querystring.parse(body);
+      fs.writeFileSync("./db.log", id);
       console.log(id, pw1, pw2, email);
     });
     response.end(fs.readFileSync('./success.html', 'utf8'));
