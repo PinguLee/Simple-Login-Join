@@ -19,7 +19,9 @@ const compare = setInterval(() => {
     &&
     (txtEmail.value !== "")
     &&
-    (txtEmail.value.indexOf("@") !== -1)
+    (txtEmail.value.indexOf("@") !== -1 || txtEmail.value.indexOf(".") !== -1)
+    &&
+    
   ) {
 
   }
