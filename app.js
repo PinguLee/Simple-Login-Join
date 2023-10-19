@@ -1,6 +1,7 @@
 const http = require('http');
 const fs = require('fs');
 const querystring = require('querystring');
+const requestIP = require('request-ip');
 
 const port = 8080;
 let a = "";
@@ -16,9 +17,6 @@ const server = http.createServer((request, response) => {
   if (request.method === 'GET' && request.url === '/') {
     response.writeHead(200, ContentType.html);
     response.end(fs.readFileSync('./index.html', 'utf8'));
-  } else if (request.method === 'GET' && request.url === '/success') {
-    response.writeHead(200, ContentType.html);
-    response.end(fs.readFileSync('./success.html', 'utf8'));
   } else if (request.method === 'GET' && request.url === '/css/style.css') {
     response.writeHead(200, ContentType.css);
     response.end(fs.readFileSync('./css/style.css', 'utf8'));
@@ -27,23 +25,17 @@ const server = http.createServer((request, response) => {
     response.end(fs.readFileSync('./scripts/script.js', 'utf8'));
   } else if (request.method === 'POST' && request.url === '/login') {
     let temp = "";
+    response.writeHead(200, ContentType.html);
     request.on('data', (chunk) => {
       temp += chunk.toString();
     });
-    response.writeHead(200, ContentType.plain);
-    response.end(() => {
-      const parseTemp = querystring.parse(temp);
-      const { id, pw } = parseTemp;
-      if (id === "asd" && pw === "dsa") {
-        console.log("1");
-      }
-    });
+    response.end(fs.readFileSync('./success.html', 'utf8'));
   } else {
     response.writeHead(404, ContentType.html);
     response.end('404 ERROR');
   }
 });
 
-server.listen(8080, () => {
+server.listen(8080, '0.0.0.0', () => {
   console.log('서버 가동 중 : http://localhost:8080/');
 });
