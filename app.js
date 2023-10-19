@@ -42,6 +42,11 @@ const server = http.createServer((request, response) => {
     response.end(fs.readFileSync('./success.html', 'utf8'));
   }
 
+  else if (request.method === 'GET' && request.url === '/scripts/readFile.js') {
+    response.writeHead(200, ContentType.js);
+    response.end(fs.readFileSync('./scripts/readFile.js', 'utf8'));
+  }
+
   else {
     response.writeHead(404, ContentType.html);
     response.end('404 ERROR');
