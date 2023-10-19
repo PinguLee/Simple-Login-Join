@@ -31,7 +31,6 @@ const server = http.createServer((request, response) => {
     response.end(fs.readFileSync('./success.html', 'utf8'));
   } else {
     response.writeHead(404, ContentType.html);
-    response.send(console.log("a"));
     response.end('404 ERROR');
   }
 });
