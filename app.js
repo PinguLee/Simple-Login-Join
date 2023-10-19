@@ -35,9 +35,8 @@ const server = http.createServer((request, response) => {
       body += chunk.toString();
     });
     request.on('end', () => {
-      const parseBody = querystring.parse(body);
-      // const { }
-
+      const { id, pw1, pw2, email } = querystring.parse(body);
+      console.log(id, pw1, pw2, email);
     });
     response.end(fs.readFileSync('./success.html', 'utf8'));
   }

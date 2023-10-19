@@ -10,33 +10,27 @@
 
 <body>
   <div id="root" class="box-Main">
-    <div class="box">
-      <h2><span></span>님 받갑습니다.</h2>
-    </div>
-    <div class="box">
-      <div>
-        <label for="txt-Title" class="lbl">Title</label>
+    <form method="post" action="/test">
+      <div class="box">
+        <h2><span></span>님 받갑습니다.</h2>
       </div>
-      <div>
+      <div class="box">
+        <label for="txt-Title" class="lbl">Title</label>
         <input type="text" name="title" id="txt-Title" class="txt">
       </div>
-    </div>
-    <div class="box">
-      <div>
+      <div class="box">
         <label for="txt-Text" class="lbl">Text</label>
+        <textarea name="text" id="txt-Text" class="txt"></textarea>
       </div>
-      <div>
-        <input type="text" name="text" id="txt-Text" class="txt">
-      </div>
-    </div>
-    <div class="box">
-      <div>
+      <div class="box">
+        <div>
 
+        </div>
+        <div>
+          <input type="submit" value="전송" id="btn-send" class="hotpink"></input>
+        </div>
       </div>
-      <div>
-        <input type="submit" value="전송" id="btn-send" class="hotpink"></input>
-      </div>
-    </div>
+    </form>
   </div>
 </body>
 
