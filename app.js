@@ -31,19 +31,22 @@ const server = http.createServer((request, response) => {
 
   else if (request.method === 'POST' && request.url === '/login') {
     let body = "";
+    
     request.on('data', (chunk) => {
       body += chunk.toString();
     });
     request.on('end', () => {
       const { id, pw1, pw2, email } = querystring.parse(body);
-      signUpAsset.id = id;
-      signUpAsset.pw = pw1;
-      signUpAsset.email = email;
+      console.log(id, pw1, pw2, email);
+      const con = fs.readFileSync('./success.html', 'utf8');
+      if (pw1 === pw2) {
+        signUpAsset.id = id;
+        signUpAsset.pw = pw1;
+        signUpAsset.email = email;
+        response.writeHead(200, ContentType.html);
+        response.end(con);
+      }
     });
-    const content = fs.readFileSync('./success.html', 'utf8')
-    response.writeHead(200, ContentType.html);
-    response.write(content);
-    response.end();
   }
 
   else if (request.method === 'POST' && request.url === '/send') {

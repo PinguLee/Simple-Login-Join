@@ -6,8 +6,6 @@ const txtPW1 = document.getElementById('txt-PW1');
 const txtPW2 = document.getElementById('txt-PW2');
 const txtEmail = document.getElementById('txt-Email');
 
-
-
 // 비활성화 활성화 보류
 const compare = setInterval(() => {
   const temp = () => {
