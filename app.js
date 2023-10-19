@@ -16,20 +16,33 @@ const server = http.createServer((request, response) => {
   if (request.method === 'GET' && request.url === '/') {
     response.writeHead(200, ContentType.html);
     response.end(fs.readFileSync('./index.html', 'utf8'));
-  } else if (request.method === 'GET' && request.url === '/css/style.css') {
+  }
+
+  else if (request.method === 'GET' && request.url === '/css/style.css') {
     response.writeHead(200, ContentType.css);
     response.end(fs.readFileSync('./css/style.css', 'utf8'));
-  } else if (request.method === 'GET' && request.url === '/scripts/script.js') {
+  }
+
+  else if (request.method === 'GET' && request.url === '/scripts/script.js') {
     response.writeHead(200, ContentType.js);
     response.end(fs.readFileSync('./scripts/script.js', 'utf8'));
-  } else if (request.method === 'POST' && request.url === '/login') {
-    let temp = "";
+  }
+
+  else if (request.method === 'POST' && request.url === '/login') {
+    let body = "";
     response.writeHead(200, ContentType.html);
     request.on('data', (chunk) => {
-      temp += chunk.toString();
+      body += chunk.toString();
+    });
+    request.on('end', () => {
+      const parseBody = querystring.parse(body);
+      // const { }
+
     });
     response.end(fs.readFileSync('./success.html', 'utf8'));
-  } else {
+  }
+
+  else {
     response.writeHead(404, ContentType.html);
     response.end('404 ERROR');
   }
