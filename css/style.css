@@ -13,8 +13,15 @@
 }
 
 .box {
+  display: flex;
+  width: 350px;
   margin: 10px 0 10px 0;
   justify-content: space-between;
+  align-items: center;
+}
+.lbl {
+  color: rgba(217, 217, 217, 1);
+  font-size: 20px;
 }
 
 .txt {
