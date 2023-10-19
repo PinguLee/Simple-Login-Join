@@ -2,6 +2,15 @@ const http = require('http');
 const fs = require('fs');
 const querystring = require('querystring');
 
+const signUpAsset = {
+  id: "",
+  pw: "",
+  email: "",
+  inputBoxColor: "#D9D9D9",
+  textColor: "#B6B6B6",
+  pointColor: "#FF6666"
+};
+
 const port = 8080;
 let a = "";
 
@@ -36,8 +45,10 @@ const server = http.createServer((request, response) => {
     });
     request.on('end', () => {
       const { id, pw1, pw2, email } = querystring.parse(body);
-      fs.writeFileSync("./db.log", id);
-      console.log(id, pw1, pw2, email);
+      signUpAsset.id = id;
+      signUpAsset.pw = pw1;
+      signUpAsset.email = email;
+      console.log(signUpAsset);
     });
     response.end(fs.readFileSync('./success.html', 'utf8'));
   }
@@ -54,11 +65,6 @@ const server = http.createServer((request, response) => {
       console.log(`내용: ${text}`);
     });
     response.end(fs.readFileSync('./index.html', 'utf8'));
-  }
-
-  else if (request.method === 'GET' && request.url === '/scripts/readF.js') {
-    response.writeHead(200, ContentType.js);
-    response.end(fs.readFileSync('./scripts/readF.js', 'utf8'));
   }
 
   else {
