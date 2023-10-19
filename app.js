@@ -1,7 +1,6 @@
 const http = require('http');
 const fs = require('fs');
 const querystring = require('querystring');
-const requestIP = require('request-ip');
 
 const port = 8080;
 let a = "";
@@ -36,6 +35,6 @@ const server = http.createServer((request, response) => {
   }
 });
 
-server.listen(8080, '0.0.0.0', () => {
+server.listen(8080, () => {
   console.log('서버 가동 중 : http://localhost:8080/');
 });
