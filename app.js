@@ -2,6 +2,7 @@ const http = require('http');
 const fs = require('fs');
 const querystring = require('querystring');
 const signUpAsset = require('./scripts/signUpAsset')
+const validation = require('./scripts/validation')
 
 const port = 8080;
 let a = "";
@@ -37,9 +38,8 @@ const server = http.createServer((request, response) => {
     });
     request.on('end', () => {
       const { id, pw1, pw2, email } = querystring.parse(body);
-      console.log(id, pw1, pw2, email);
       const con = fs.readFileSync('./success.html', 'utf8');
-      if (pw1 === pw2) {
+      if (validation(id, pw1, pw2, email)) {
         signUpAsset.id = id;
         signUpAsset.pw = pw1;
         signUpAsset.email = email;
