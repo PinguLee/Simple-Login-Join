@@ -30,17 +30,14 @@ const server = http.createServer((request, response) => {
     request.on('data', (chunk) => {
       temp += chunk.toString();
     });
-    request.on('end', () => {
+    response.writeHead(200, ContentType.plain);
+    response.end(() => {
       const parseTemp = querystring.parse(temp);
       const { id, pw } = parseTemp;
       if (id === "asd" && pw === "dsa") {
         console.log("1");
       }
     });
-    response.writeHead(200, ContentType.plain);
-    response.end(
-      console.log("2")
-    );
   } else {
     response.writeHead(404, ContentType.html);
     response.end('404 ERROR');
