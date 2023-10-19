@@ -45,5 +45,5 @@ const server = http.createServer((request, response) => {
 });
 
 server.listen(8080, () => {
-  console.log('서버 가동 중');
+  console.log('서버 가동 중 : http://localhost:8080/');
 });
