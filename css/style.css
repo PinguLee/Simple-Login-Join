@@ -21,6 +21,10 @@ a {
   color: blue;
 }
 
+#txt-Text {
+  
+}
+
 .box {
   display: flex;
   width: 350px;
