@@ -42,6 +42,20 @@ const server = http.createServer((request, response) => {
     response.end(fs.readFileSync('./success.html', 'utf8'));
   }
 
+  else if (request.method === 'POST' && request.url === '/send') {
+    let body = "";
+    response.writeHead(200, ContentType.html);
+    request.on('data', (chunk) => {
+      body += chunk.toString();
+    });
+    request.on('end', () => {
+      const { title, text } = querystring.parse(body);
+      console.log(`제목: ${title}`);
+      console.log(`내용: ${text}`);
+    });
+    response.end(fs.readFileSync('./index.html', 'utf8'));
+  }
+
   else if (request.method === 'GET' && request.url === '/scripts/readFile.js') {
     response.writeHead(200, ContentType.js);
     response.end(fs.readFileSync('./scripts/readFile.js', 'utf8'));
