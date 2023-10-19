@@ -4,12 +4,20 @@
   box-sizing: border-box;
 }
 
+a{
+  text-decoration: none;
+  text-decoration-line: none;
+}
 #root {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100vw;
   height: 100vh;
+}
+
+#lbl-Join {
+  color: blue;
 }
 
 .box {
