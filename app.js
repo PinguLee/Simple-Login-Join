@@ -1,6 +1,7 @@
 const http = require('http');
 const fs = require('fs');
 const querystring = require('querystring');
+const signUpAsset = require('./scripts/signUpAsset')
 
 const port = 8080;
 let a = "";
@@ -30,7 +31,6 @@ const server = http.createServer((request, response) => {
 
   else if (request.method === 'POST' && request.url === '/login') {
     let body = "";
-    response.writeHead(200, ContentType.html);
     request.on('data', (chunk) => {
       body += chunk.toString();
     });
@@ -39,9 +39,11 @@ const server = http.createServer((request, response) => {
       signUpAsset.id = id;
       signUpAsset.pw = pw1;
       signUpAsset.email = email;
-      console.log(signUpAsset);
     });
-    response.end(fs.readFileSync('./success.html', 'utf8'));
+    const content = fs.readFileSync('./success.html', 'utf8')
+    response.writeHead(200, ContentType.html);
+    response.write(content);
+    response.end();
   }
 
   else if (request.method === 'POST' && request.url === '/send') {
