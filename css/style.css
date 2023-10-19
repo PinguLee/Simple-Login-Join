@@ -28,12 +28,12 @@ a {
   align-items: center;
 }
 .lbl {
-  color: rgba(217, 217, 217, 1);
+  color: #d9d9d9;
   font-size: 20px;
 }
 
 .txt {
-  background-color: rgba(217, 217, 217, 1);
+  background-color: #d9d9d9;
   border: none;
   border-radius: 3px;
   width: 300px;
@@ -47,6 +47,6 @@ a {
 }
 
 .hotpink {
-  background-color: rgba(255, 102, 102, 1);
+  background-color: #FF6666;
   color: white;
 }
