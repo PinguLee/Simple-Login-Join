@@ -1,4 +1,4 @@
-
+const one = `
 <!DOCTYPE html>
 <html lang="ko">
 
@@ -13,7 +13,10 @@
   <div id="root" class="box-Main">
     <form method="post" action="/send">
       <div class="box">
-        <h2><span id="nameID">ㅁㄴㅇ
+        <h2><span id="nameID">`;
+        
+        
+const two = `
 </span>님 받갑습니다.</h2>
       </div>
       <div class="box">
@@ -37,3 +40,6 @@
 </body>
 
 </html>
+`;
+
+module.exports = {one, two};

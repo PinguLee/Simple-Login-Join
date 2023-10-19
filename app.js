@@ -3,6 +3,7 @@ const fs = require('fs');
 const querystring = require('querystring');
 const signUpAsset = require('./scripts/signUpAsset')
 const validation = require('./scripts/validation')
+const db = require('./scripts/db')
 
 const port = 8080;
 let a = "";
@@ -38,13 +39,16 @@ const server = http.createServer((request, response) => {
     });
     request.on('end', () => {
       const { id, pw1, pw2, email } = querystring.parse(body);
-      const con = fs.readFileSync('./success.html', 'utf8');
+      const data = db.one + id + db.two;
+      fs.writeFileSync('./success.html', data)
       if (validation(id, pw1, pw2, email)) {
         signUpAsset.id = id;
         signUpAsset.pw = pw1;
         signUpAsset.email = email;
         response.writeHead(200, ContentType.html);
-        response.end(con);
+        response.end(fs.readFileSync('./success.html', 'utf8'));
+      } else {
+        response.end(fs.readFileSync('./index.html', 'utf8'));
       }
     });
   }
