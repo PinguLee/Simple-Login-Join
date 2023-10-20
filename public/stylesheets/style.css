@@ -20,12 +20,17 @@ a {
   color: blue;
 }
 
+#root>div:nth-child(1) {
+
+}
+
 .box {
   display: flex;
   width: 350px;
   margin: 10px 0 10px 0;
   justify-content: space-between;
   align-items: center;
+  flex-direction: row;
 }
 .lbl {
   color: #d9d9d9;
@@ -44,9 +49,4 @@ a {
 
 #txt-Text {
   height: 300px;
-}
-
-.hotpink {
-  background-color: #FF6666;
-  color: white;
 }
