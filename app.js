@@ -46,6 +46,25 @@ const server = http.createServer((request, response) => {
     });
   }
 
+  else if (request.method === 'GET' && request.url === '/join') {
+    let body = "";
+
+    request.on('data', (chunk) => {
+      body += chunk.toString();
+    });
+    request.on('end', () => {
+      const { id, pw } = querystring.parse(body);
+      // const data = doc.one + id + doc.two;
+      fs.writeFileSync('./public/join.html', data)
+      if (validation(id, pw)) {
+        signUpAsset.id = id;
+        signUpAsset.pw = pw;
+        response.writeHead(200, ContentType.html);
+        response.end(fs.readFileSync('./public/join.html', 'utf8'));
+      }
+    });
+  }
+
   else if (request.method === 'POST' && request.url === '/send') {
     let body = "";
     response.writeHead(200, ContentType.html);
