@@ -5,7 +5,7 @@ const port = require('./public/javascripts/port')
 const ContentType = require('./public/javascripts/contenttype')
 const signUpAsset = require('./public/javascripts/signUpAsset');
 const validation = require('./public/javascripts/validation');
-const db = require('./public/javascripts/db');
+const database = require('./public/javascripts/db');
 
 
 
@@ -32,13 +32,12 @@ const server = http.createServer((request, response) => {
       body += chunk.toString();
     });
     request.on('end', () => {
-      const { id, pw1, pw2, email } = querystring.parse(body);
-      const data = db.one + id + db.two;
+      const { id, pw } = querystring.parse(body);
+      const data = database.one + id + database.two;
       fs.writeFileSync('./public/success.html', data)
-      if (validation(id, pw1, pw2, email)) {
+      if (validation(id, pw)) {
         signUpAsset.id = id;
-        signUpAsset.pw = pw1;
-        signUpAsset.email = email;
+        signUpAsset.pw = pw;
         response.writeHead(200, ContentType.html);
         response.end(fs.readFileSync('./public/success.html', 'utf8'));
       } else {
