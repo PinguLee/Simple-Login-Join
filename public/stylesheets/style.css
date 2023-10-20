@@ -8,10 +8,12 @@ a {
   text-decoration: none;
   text-decoration-line: none;
 }
+
 #root {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   width: 100vw;
   height: 100vh;
 }
@@ -29,16 +31,12 @@ a {
 .container {
   display: flex;
   align-items: center;
-  justify-content: space-between;
   flex-direction: column;
-  height: 200px;
 }
 
 .box {
   display: flex;
-  flex-direction: row;
   align-items: center;
-  width: 350px;
 }
 
 .lbl {

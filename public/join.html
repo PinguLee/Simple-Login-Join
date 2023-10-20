@@ -10,46 +10,28 @@
 </head>
 
 <body>
-  <div id="root" class="box-Main">
-    <form method="post" action="/login" class="container">
-
-    </form>
+  <div id="root">
+    <div class="container">
+      <form method="post" action="/Join">
+        <div class="box">
+          <input type="text" name="name" id="txt-Name" class="txt" placeholder="Name">
+        </div>
+        <div class="box">
+          <input type="text" name="id" id="txt-ID" class="txt" placeholder="ID">
+        </div>
+        <div class="box">
+          <input type="password" name="pw1" id="txt-PW1" class="txt" placeholder="PW">
+        </div>
+        <div class="box">
+          <input type="password" name="pw2" id="txt-PW2" class="txt" placeholder="PW Check">
+        </div>
+        <div class="box">
+          <input type="text" name="email" id="txt-Email" class="txt" placeholder="E-mail">
+        </div>
+        <div class="box">
+          <input type="submit" value="회원가입" id="btn-Join">
+        </div>
+      </form>
+    </div>
   </div>
-
-
-
-
-  <div class="box1">
-    <label for="txt-Name" class="lbl">Name</label>
-    <input type="text" name="id" id="txt-Name" class="txt">
-  </div>
-  <div class="box">
-    <label for="txt-ID" class="lbl">ID</label>
-    <input type="text" name="id" id="txt-ID" class="txt">
-  </div>
-  <div class="box">
-    <label for="txt-PW1" class="lbl">PW</label>
-    <input type="password" name="pw1" id="txt-PW1" class="txt">
-  </div>
-  <div class="box">
-    <label for="txt-PW2" class="lbl">rePW</label>
-    <input type="password" name="pw2" id="txt-PW2" class="txt">
-  </div>
-  <div class="box">
-    <label for="txt-Email" class="lbl">Email</label>
-    <input type="text" name="email" id="txt-Email" class="txt">
-  </div>
-  <div class="box">
-    <!--<a href=""><label id="lbl-Join">계정이 없으십니까?</label></a>-->
-  </div>
-  <div class="box">
-    <label id="lbl-Alert"></label>
-  </div>
-  <div class="box">
-    <input type="submit" value="로그인" id="btn-Login"></input>
-    <button id="btn-Join">회원가입</button>
-  </div>
-
 </body>
-
-</html>

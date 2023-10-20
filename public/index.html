@@ -11,20 +11,22 @@
 
 <body>
   <div id="root">
-    <form method="post" action="/login" class="container">
-      <div class="box">
-        <input type="text" name="id" id="txt-ID" placeholder="ID" class="txt">
-      </div>
-      <div class="box">
-        <input type="password" name="pw1" id="txt-PW1" placeholder="PW" class="txt">
-      </div>
-      <div class="box">
-        <input type="submit" value="로그인" id="btn-Login"></input>
-      </div>
-      <div class="box">
-        <button id="btn-Join">회원가입</button>
-      </div>
-    </form>
+    <div class="container">
+      <form method="post" action="/login">
+        <div class="box">
+          <input type="text" name="id" id="txt-ID" placeholder="ID" class="txt">
+        </div>
+        <div class="box">
+          <input type="password" name="pw1" id="txt-PW1" placeholder="PW" class="txt">
+        </div>
+        <div class="box">
+          <input type="submit" value="로그인" id="btn-Login"></input>
+        </div>
+      </form>
+      <form method="post" action="/Join">
+        <input type="submit" value="회원가입" id="btn-Join"></input>
+      </form>
+    </div>
   </div>
 
 </body>
