@@ -1,18 +1,13 @@
 const http = require('http');
 const fs = require('fs');
 const querystring = require('querystring');
+const port = require('./public/javascripts/port')
+const ContentType = require('./public/javascripts/contenttype')
 const signUpAsset = require('./public/javascripts/signUpAsset');
 const validation = require('./public/javascripts/validation');
 const db = require('./public/javascripts/db');
 
-const port = 8080;
 
-const ContentType = {
-  'plain': { 'Content-Type': 'text/plain; charset=utf8' },
-  'html': { 'Content-Type': 'text/html; charset=utf8' },
-  'css': { 'Content-Type': 'text/css; charset=utf8' },
-  'js': { 'Content-Type': 'application/javascript; charset=utf8' }
-};
 
 const server = http.createServer((request, response) => {
   if (request.method === 'GET' && request.url === '/') {

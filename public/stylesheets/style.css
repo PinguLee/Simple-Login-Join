@@ -8,27 +8,38 @@ a {
   text-decoration: none;
   text-decoration-line: none;
 }
+
 #root {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   width: 100vw;
   height: 100vh;
 }
 
-#lbl-Join {
-  color: blue;
+#btn-Login {
+  width: 300px;
+  height: 40px;
+}
+
+#btn-Join {
+  width: 300px;
+  height: 40px;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 
 .box {
   display: flex;
-  width: 350px;
-  margin: 10px 0 10px 0;
-  justify-content: space-between;
   align-items: center;
 }
+
 .lbl {
-  color: #d9d9d9;
   font-size: 20px;
 }
 
@@ -40,13 +51,4 @@ a {
   height: 35px;
   padding: 10px;
   font-weight: bold;
-}
-
-#txt-Text {
-  height: 300px;
-}
-
-.hotpink {
-  background-color: #FF6666;
-  color: white;
 }
