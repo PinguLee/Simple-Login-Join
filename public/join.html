@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Join</title>
+  <link rel="stylesheet" href="./stylesheets/style.css">
+  <script src="./javascripts/script.js" defer></script>
+</head>
+
+<body>
+  <div id="root" class="box-Main">
+
+    <form method="post" action="/login">
+      <div class="box box-ID">
+        <label for="txt-ID" class="lbl">ID</label>
+        <input type="text" name="id" id="txt-ID" class="txt">
+      </div>
+      <div class="box box-PW1">
+        <label for="txt-PW1" class="lbl">PW</label>
+        <input type="password" name="pw1" id="txt-PW1" class="txt">
+      </div>
+      <div class="box box-PW2">
+        <label for="txt-PW2" class="lbl">PW</label>
+        <input type="password" name="pw2" id="txt-PW2" class="txt">
+      </div>
+      <div class="box box-Email">
+        <label for="txt-Email" class="lbl">Email</label>
+        <input type="text" name="email" id="txt-Email" class="txt">
+      </div>
+      <div class="box box-Join">
+        <!--<a href=""><label id="lbl-Join">계정이 없으십니까?</label></a>-->
+      </div>
+      <div class="box box-Alert">
+        <label id="lbl-Alert"></label>
+      </div>
+      <div class="box box-Login">
+        <input type="submit" value="로그인" id="btn-Login" class="hotpink"></input>
+      </div>
+    </form>
+  </div>
+
+</body>
+
+</html>
