@@ -1,12 +1,11 @@
 const http = require('http');
 const fs = require('fs');
 const querystring = require('querystring');
-const signUpAsset = require('./scripts/signUpAsset')
-const validation = require('./scripts/validation')
-const db = require('./scripts/db')
+const signUpAsset = require('./Static/js/signUpAsset')
+const validation = require('./Static/js/validation')
+const db = require('./Static/js/db')
 
 const port = 8080;
-let a = "";
 
 const ContentType = {
   'plain': { 'Content-Type': 'text/plain; charset=utf8' },
@@ -26,9 +25,9 @@ const server = http.createServer((request, response) => {
     response.end(fs.readFileSync('./css/style.css', 'utf8'));
   }
 
-  else if (request.method === 'GET' && request.url === '/scripts/script.js') {
+  else if (request.method === 'GET' && request.url === '/js/script.js') {
     response.writeHead(200, ContentType.js);
-    response.end(fs.readFileSync('./scripts/script.js', 'utf8'));
+    response.end(fs.readFileSync('./js/script.js', 'utf8'));
   }
 
   else if (request.method === 'POST' && request.url === '/login') {

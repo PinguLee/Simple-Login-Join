@@ -10,7 +10,7 @@ function validation(id, pw1, pw2, email) {
     &&
     (email !== "")
     &&
-    (email.indexOf("@") !== -1 || email.indexOf(".") !== -1) 
+    (email.indexOf("@") !== -1 && email.indexOf(".") !== -1) 
   ) {
     return 1;
   }
