@@ -33,7 +33,7 @@ const server = http.createServer((request, response) => {
     });
     request.on('end', () => {
       const { id, pw } = querystring.parse(body);
-      const data = doc.one + id + doc.two;
+      // const data = doc.one + id + doc.two;
       fs.writeFileSync('./public/success.html', data)
       if (validation(id, pw)) {
         signUpAsset.id = id;
