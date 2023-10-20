@@ -1,2 +1,2 @@
 # Simple-Login-Join
-<p><img src="https://github.com/PinguLee/Simple-Login-Join"></p>
+<img src="https://github.com/PinguLee/Simple-Login-Join/blob/main/public/images/diagram.png">
