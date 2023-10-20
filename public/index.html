@@ -13,21 +13,21 @@
   <div id="root" class="box-Main">
     <form method="post" action="/login">
 
-      <div class="1">
+      <div class="container">
         <div class="box">
           <label for="txt-ID" class="lbl">ID</label>
-          <label for="txt-PW1" class="lbl">PW</label>
+          <input type="password" name="pw1" id="txt-PW1" class="txt">
         </div>
         <div class="box">
+          <label for="txt-PW1" class="lbl">PW</label>
           <input type="text" name="id" id="txt-ID" class="txt">
-          <input type="password" name="pw1" id="txt-PW1" class="txt">
         </div>
         <div class="box">
           <a href="./join.html"><label id="lbl-Join">계정이 없으십니까?</label></a>
         </div>
       </div>
 
-      <div class="2">
+      <div class="container">
         <div class="box">
           <input type="submit" value="로그인" id="btn-Login"></input>
         </div>

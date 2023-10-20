@@ -12,6 +12,7 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: row;
   width: 100vw;
   height: 100vh;
 }
@@ -20,17 +21,18 @@ a {
   color: blue;
 }
 
-#root>div:nth-child(1) {
-
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
 }
 
 .box {
   display: flex;
-  width: 350px;
-  margin: 10px 0 10px 0;
-  justify-content: space-between;
-  align-items: center;
   flex-direction: row;
+  align-items: center;
+  justify-content: center;
 }
 .lbl {
   color: #d9d9d9;
@@ -45,8 +47,4 @@ a {
   height: 35px;
   padding: 10px;
   font-weight: bold;
-}
-
-#txt-Text {
-  height: 300px;
 }
