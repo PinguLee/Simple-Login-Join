@@ -2,7 +2,7 @@ const http = require('http');
 const fs = require('fs');
 const querystring = require('querystring');
 const port = require('./public/javascripts/port')
-const ContentType = require('./public/javascripts/contenttype')
+const ContentType = require('./public/javascripts/contentType')
 const signUpAsset = require('./public/javascripts/signUpAsset');
 const validation = require('./public/javascripts/validation');
 const doc = require('./public/javascripts/doc');
@@ -23,6 +23,11 @@ const server = http.createServer((request, response) => {
   else if (request.method === 'GET' && request.url === '/javascripts/script.js') {
     response.writeHead(200, ContentType.js);
     response.end(fs.readFileSync('./public/javascripts/script.js', 'utf8'));
+  }
+
+  else if (request.method === 'GET' && request.url === '/join') {
+    response.writeHead(200, ContentType.html);
+    response.end(fs.readFileSync('./public/join.html', 'utf8'));
   }
 
   else if (request.method === 'POST' && request.url === '/login') {
@@ -46,19 +51,20 @@ const server = http.createServer((request, response) => {
     });
   }
 
-  else if (request.method === 'GET' && request.url === '/join') {
+  else if (request.method === 'POST' && request.url === '/create') {
     let body = "";
 
     request.on('data', (chunk) => {
       body += chunk.toString();
     });
     request.on('end', () => {
-      const { id, pw } = querystring.parse(body);
-      // const data = doc.one + id + doc.two;
-      fs.writeFileSync('./public/join.html', data)
-      if (validation(id, pw)) {
+      const { name, id, pw1, pw2, email } = querystring.parse(body);
+      fs.writeFileSync('./public/join.html', data);
+      if (validation(name, id, pw1, pw2, email)) {
+        signUpAsset.name = name;
         signUpAsset.id = id;
-        signUpAsset.pw = pw;
+        signUpAsset.pw = pw1;
+        signUpAsset.email = email;
         response.writeHead(200, ContentType.html);
         response.end(fs.readFileSync('./public/join.html', 'utf8'));
       }

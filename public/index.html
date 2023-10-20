@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login</title>
   <link rel="stylesheet" href="./stylesheets/style.css">
+  <link rel="stylesheet" href="./stylesheets/hiddenText.css">
   <script src="./javascripts/script.js" defer></script>
 </head>
 
@@ -23,7 +24,8 @@
           <input type="submit" value="로그인" id="btn-Login"></input>
         </div>
       </form>
-      <form method="get" action="/join">
+      <form method="post" action="/join">
+        <p id="ids"></p><p id="pws"></p>
         <input type="submit" value="회원가입" id="btn-Join"></input>
       </form>
     </div>
