@@ -7,8 +7,6 @@ const signUpAsset = require('./public/javascripts/module/signUpAsset');
 const validation = require('./public/javascripts/module/validation');
 const doc = require('./public/javascripts/module/doc');
 
-
-
 const server = http.createServer((request, response) => {
   const error404 = () => {
     response.writeHead(404, ContentType.html);
@@ -43,7 +41,7 @@ const server = http.createServer((request, response) => {
 
     case request.url === '/javascripts/moveIDPW':
       response.writeHead(200, ContentType.js);
-      response.end(fs.readFileSync('./public/javascripts/script.js', 'utf8'));
+      response.end(fs.readFileSync('./public/javascripts/moveIDPW.js', 'utf8'));
       break;
 
     default:
